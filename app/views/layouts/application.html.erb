@@ -33,7 +33,17 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+
+
 <%= yield %>
+
+<div class="container apple_pagination">
+  <div class="page_info">
+    <%= page_entries_info @places %>
+  </div>
+  <%= will_paginate @places, :container => false %>
+</div>
+
 
 </body>
 </html>
