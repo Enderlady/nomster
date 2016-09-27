@@ -4,12 +4,6 @@
   <br /><br />
   <p><%= @place.description %></p>
 
-  <style>
-
-    #map {
-      height: 300px;
-    }
-  </style>
 
   <% if @place.latitude.present? && @place.longitude.present? %>
     <script>
