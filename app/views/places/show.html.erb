@@ -88,21 +88,46 @@
 </div>
 
 <div class="clear"></div>
-<div class="booyah-box col-xs-10 col-xs-offset-1">
-  <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-    <%= f.input :picture %>
-    <%= f.input :caption %>
-    <%= f.submit "Add a photo", class: 'btn btn-primary' %>
-  <% end %>
+
+<div class="slideshow-container booyah-box">
+  <% @place.photos.each do |photo| %>
+    <div class="mySlides">
+      <div class="numbertext">1 / 3</div>
+      <img src=photo.picture style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+<% end %>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
 
-<div class='clear'></div>
-<% @place.photos.each do |photo| %>
-  <div>
-    <%= image_tag photo.picture %>
-    <%= photo.caption %>
+<!-- <% @place.photos.each do |photo| %>
+  <div id="links">
+    <a href="photo/picture" title="photo.caption" data-gallery>
+        <img src="photo/picture" alt="photo.caption">
+    </a>
   </div>
 <% end %>
+
+
+<div class='clear'></div>
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <% @place.photos.each do |photo| %>
+    <div>
+      <%= image_tag photo.picture %>
+      <%= photo.caption %>
+    </div>
+  <% end %>
+</div>
+-->
 
 <div class="col-xs-10 col-xs-offset-1">
   <h1 class="pull-left">Comments</h1>
@@ -124,4 +149,5 @@
       <small><%= comment.user.email %></small>
     </blockquote>
   </div>
+
 <% end %>
