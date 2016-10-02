@@ -9,24 +9,24 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <%= image_tag 'slider1.jpg' %>
+      <%= image_tag 'slider1.jpg', class: 'img-responsive' %>
       <div class="carousel-caption">
         Places to visit go in Hawai'i
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'slider2.jpg' %>
+      <%= image_tag 'slider2.jpg', class: 'img-responsive' %>
       <div class="carousel-caption">
         The best Shave Ice
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'slider3.jpg' %>
+      <%= image_tag 'slider3.jpg', class: 'img-responsive' %>
       <div class="carousel-caption">
         Local ono grindz
+      </div>
     </div>
-  </div>
-
+  </div>  
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -37,6 +37,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<div class="clear"></div>
 
 <% @places.each do |place| %>
   <div class="booyah-box col-xs-10 col-xs-offset-1">
