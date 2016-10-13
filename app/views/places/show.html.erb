@@ -89,45 +89,34 @@
 
 <div class="clear"></div>
 
-<div class="slideshow-container booyah-box">
+<br />
+<h1 class="pull-left col-xs-offset-1">Pictures</h1>
+<br />
+<br />
+<br />
+<div class="clear"></div>
+
+  <!-- Wrapper for slides -->
+<div class="picture-inner container" role="listbox" style="max-height: 400px">
   <% @place.photos.each do |photo| %>
-    <div class="mySlides">
-      <div class="numbertext">1 / 3</div>
-      <img src=picture_url(@place) style="width:100%">
-      <div class="text">Caption Text</div>
+    <div class="item active booyah-box col-xs-5 col-xs-offset-1">
+      <%= image_tag photo.picture, class: 'img-responsive' %>
+      <div style="font-size: 25px">
+        <div style="text-align: center"><%= photo.caption %></div>
+      </div>
+<!--    <% if current_user && current_user == @place.user %>
+        <div class="pull-right">
+          <%= link_to 'Destroy', place_photos_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+        </div>
+      <% end %> --> 
     </div>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  <br>
-<% end %>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-
-<!-- <% @place.photos.each do |photo| %>
-  <div id="links">
-    <a href="photo/picture" title="photo.caption" data-gallery>
-        <img src="photo/picture" alt="photo.caption">
-    </a>
-  </div>
-<% end %>
-
-
-<div class='clear'></div>
-<div class="booyah-box col-xs-10 col-xs-offset-1">
-  <% @place.photos.each do |photo| %>
-    <div>
-      <%= image_tag photo.picture %>
-      <%= photo.caption %>
-    </div>
   <% end %>
 </div>
--->
+
+
+<div class="clear"></div>
+
 
 <div class="col-xs-10 col-xs-offset-1">
   <h1 class="pull-left">Comments</h1>
